@@ -4,3 +4,4 @@ cypress/screenshots/
 cypress/results/
 .DS_Store
 .env
+env
