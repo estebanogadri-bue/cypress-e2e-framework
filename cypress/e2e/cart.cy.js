@@ -1,14 +1,18 @@
-import AddToCart from '../pages/AddToCart'; 
+import LoginPage from '../pages/LoginPage'
+import InventoryPage from '../pages/InventoryPage'
 
-describe('add to cart', () => {
+describe('Carrito - SauceDemo', () => {
+  beforeEach(() => {
+    cy.login('standard')
+  })
 
-    beforeEach(function() {
-        cy.visit('/') ;
-        cy.get('#user-name').type('standard_user')
-        cy.get('#password').type('secret_sauce')
-        cy.get('#login-button').click()
-
-        cy.url().should('include', '/inventory')
-        cy.get('[data-test="title"]').should('have.text', 'Products');
+  it('debe agregar todos los productos al carrito', () => {
+    InventoryPage.getProductsCount().then((count) => {
+      InventoryPage.addAllToCart()
+      cy.get('.shopping_cart_badge')
+        .should('be.visible')
+        .and('have.text', String(count))
     })
+  })
 })
+

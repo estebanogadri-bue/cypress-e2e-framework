@@ -30,6 +30,6 @@ Cypress.Commands.add("login", (userType="standard") => {
     cy.fixture("user").then((users) => {
         const user = users[userType];
         LoginPage.visit();
-        LoginPage.Login(user.username, user.password);
+        LoginPage.login(user.username, user.password);
     });
 })

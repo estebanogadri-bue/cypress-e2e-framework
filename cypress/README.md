@@ -1,54 +1,87 @@
 # Cypress E2E Automation Framework – SauceDemo
- 
-Framework de automatización **E2E** desarrollado con **Cypress**, aplicando buenas prácticas reales de QA Automation utilizadas en proyectos **SaaS / e-commerce**.
- 
-El objetivo del proyecto es demostrar **criterio técnico**, **estructura escalable** y **decisiones conscientes** según el contexto del sistema bajo prueba.
- 
+
+Proyecto de automatización **End-to-End (E2E)** utilizando **Cypress** y **JavaScript**, enfocado en buenas prácticas de **QA Automation** y **Page Object Model (POM)**.
+
+El objetivo de este proyecto es demostrar habilidades prácticas en automatización de pruebas web, diseño de framework, manejo de datos de prueba y ejecución de flujos completos de negocio.
+
 ---
- 
-## 🚀 Stack Tecnológico
- 
-- Cypress (E2E Testing)
-- JavaScript
-- Page Object Model (POM)
-- Custom Commands (`Cypress.Commands`)
-- Fixtures para datos de prueba
- 
+
+## 🚀 Aplicación bajo prueba (AUT)
+
+- **URL:** https://www.saucedemo.com/
+- **Tipo:** Web e-commerce demo
+- **Funcionalidades cubiertas:**
+  - Login (válido e inválido)
+  - Gestión de productos
+  - Carrito de compras
+  - Checkout completo
+
 ---
- 
-## 📁 Estructura del Proyecto
- 
+
+## 🛠 Stack Tecnológico
+
+- **Cypress**
+- **JavaScript**
+- **Node.js**
+- **Page Object Model (POM)**
+- **Fixtures (datos externos)**
+- **Custom Commands**
+- **E2E Testing**
+
+---
+
+## 📂 Estructura del Proyecto
+
 ```text
 cypress/
 ├── e2e/
-│   ├── login.cy.js        # Tests de login
 │   ├── cart.cy.js         # Tests de carrito
-│   └── checkout.cy.js    # Flujo E2E completo
-├── pages/
-│   ├── LoginPage.js
-│   ├── ProductsPage.js
-│   ├── CartPage.js
-│   └── CheckoutPage.js
+│   ├── checkout.cy.js    # Flujo E2E completo
+│   └── login.cy.js        # Tests de login
 ├── fixtures/
-│   ├── users.json
-│   └── checkout.json
+│   ├── checkout.json
+│   └── users.json 
+├── pages/
+│   ├── CartPage.js
+│   ├── CheckoutPage.js
+│   ├── InventoryPage.js
+│   └── LoginPage.js
 └── support/
     ├── commands.js
     └── e2e.js
  
-🔐 Estrategia de Login
-Login por UI (cy.login())
- 
-Utilizado para:
--Tests funcionales de login
-- Validaciones de error
-- Sistemas sin API de autenticación (caso SauceDemo)
- 
-Implementado mediante Page Object Model.
-- cy.login("standard");
-SauceDemo no posee una API real de autenticación.
-Por este motivo, el login por API se contempla a nivel conceptual, pero el flujo real utiliza UI.
- 
+## 🧩 Buenas Prácticas Aplicadas
+
+- ✔ Uso de **Page Object Model (POM)** para desacoplar lógica y selectores
+- ✔ Selectores robustos con `data-test`
+- ✔ Datos de prueba externalizados con **fixtures**
+- ✔ **Custom command `cy.login()`** para reutilizar lógica
+- ✔ Tests independientes y repetibles
+- ✔ Validaciones basadas en comportamiento de negocio
+- ✔ Proyecto preparado para ejecución en CI/CD
+
+---
+
+## 🧪 Casos de Prueba Automatizados
+
+### 🔐 Autenticación
+- Login exitoso con usuario válido
+- Login fallido con credenciales inválidas
+- Validación de mensajes de error
+
+### 🛒 Carrito
+- Agregar uno o varios productos al carrito
+- Validación del badge del carrito
+- Validación del contenido del carrito
+
+### 💳 Checkout (E2E)
+- Completar información del comprador
+- Validar resumen de compra
+- Finalizar orden exitosamente
+- Confirmación de compra completada
+
+---
+
 🧪 Tipos de Tests Implementados
 Smoke Tests
  
@@ -73,15 +106,8 @@ ejecutar Somoke Tests
 - npx cypress run --env grepTags=@somoke
 Ejecutar Suite Completa
 - npx cypress run
-- npx cypress run --spec "cypress/e2e/cart/*.cy.js" para ejecutar un solo spect
+- npx cypress run --spec "cypress/e2e/cart/*.cy.js" 
 
-
-✅ Buenas Prácticas Aplicadas
-- Separación de responsabilidades (POM)
-- Datos desacoplados mediante fixtures
-- Custom commands reutilizables
-- Assertions funcionales (no visuales)
-- Decisiones técnicas basadas en contexto real
  
 🎯 Objetivo del Framework
  
@@ -93,7 +119,6 @@ Este proyecto no busca cubrir todos los casos posibles, sino demostrar:
 Enfoque profesional orientado a negocio
  
 👤 Autor
- 
-Ray Blanco
+Esteban Ogadri 
 QA Analyst | QA Automation
 Enfoque en pruebas funcionales, automatización y calidad en entornos SaaS
