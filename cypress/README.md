@@ -6,7 +6,7 @@ El objetivo de este proyecto es demostrar habilidades prácticas en automatizaci
 
 ---
 
-## 🚀 Aplicación bajo prueba (AUT)
+## Aplicación bajo prueba (AUT)
 
 - **URL:** https://www.saucedemo.com/
 - **Tipo:** Web e-commerce demo
@@ -18,7 +18,7 @@ El objetivo de este proyecto es demostrar habilidades prácticas en automatizaci
 
 ---
 
-## 🛠 Stack Tecnológico
+## Stack Tecnológico
 
 - **Cypress**
 - **JavaScript**
@@ -30,7 +30,7 @@ El objetivo de este proyecto es demostrar habilidades prácticas en automatizaci
 
 ---
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```text
 cypress/
@@ -50,7 +50,7 @@ cypress/
     ├── commands.js
     └── e2e.js
  
-## 🧩 Buenas Prácticas Aplicadas
+## Buenas Prácticas Aplicadas
 
 - ✔ Uso de **Page Object Model (POM)** para desacoplar lógica y selectores
 - ✔ Selectores robustos con `data-test`
@@ -62,19 +62,19 @@ cypress/
 
 ---
 
-## 🧪 Casos de Prueba Automatizados
+## Casos de Prueba Automatizados
 
-### 🔐 Autenticación
+### Autenticación
 - Login exitoso con usuario válido
 - Login fallido con credenciales inválidas
 - Validación de mensajes de error
 
-### 🛒 Carrito
+### Carrito
 - Agregar uno o varios productos al carrito
 - Validación del badge del carrito
 - Validación del contenido del carrito
 
-### 💳 Checkout (E2E)
+### Checkout (E2E)
 - Completar información del comprador
 - Validar resumen de compra
 - Finalizar orden exitosamente
@@ -82,7 +82,7 @@ cypress/
 
 ---
 
-🧪 Tipos de Tests Implementados
+Tipos de Tests Implementados
 Smoke Tests
  
 Validan que el core del negocio esté operativo:
@@ -97,7 +97,7 @@ Simulan el comportamiento real del usuario:
 - Checkout completo
 - Confirmación de compra
  
-▶️ Ejecución del Proyecto
+Ejecución del Proyecto
 Instalación
 - npm install
 Abrir Cypress
@@ -109,7 +109,7 @@ Ejecutar Suite Completa
 - npx cypress run --spec "cypress/e2e/cart/*.cy.js" 
 
  
-🎯 Objetivo del Framework
+Objetivo del Framework
  
 Este proyecto no busca cubrir todos los casos posibles, sino demostrar:
 - Capacidad de análisis
@@ -118,7 +118,7 @@ Este proyecto no busca cubrir todos los casos posibles, sino demostrar:
  
 Enfoque profesional orientado a negocio
  
-👤 Autor
+Autor
 Esteban Ogadri 
 QA Analyst | QA Automation
 Enfoque en pruebas funcionales, automatización y calidad en entornos SaaS
